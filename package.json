@@ -1,0 +1,99 @@
+{
+  "name": "slyrouter",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Simple vanilla js router for wapka, wapkiz, and other normal sites",
+  "main": "./dist/slyrouter.cjs.js",
+  "module": "./dist/slyrouter.js",
+  "browser": "./dist/slyrouter.umd.js",
+  "types": "./dist/slyrouter.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "prepublishOnly": "npm run build && npm run test:run"
+  },
+  "author": "Quabynah Davis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davisdeveloper/slyrouter.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "router",
+    "spa",
+    "wapka",
+    "wapkiz",
+    "xtgem",
+    "vanilla-js",
+    "framework",
+    "sly",
+    "components",
+    "navigation",
+    "client-side",
+    "ui"
+  ],
+  "bugs": {
+    "url": "https://github.com/davisdeveloper/slyrouter/issues"
+  },
+  "homepage": "https://github.com/davisdeveloper/slyrouter#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "imports": {
+    "#core/*": "./src/core/*.js",
+    "#decorator/*": "./src/decorators/*.js",
+    "#plugins/*": "./src/plugins/*.js",
+    "#util/*": "./src/utils/*.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/slyrouter.js",
+      "require": "./dist/slyrouter.cjs.js",
+      "browser": "./dist/slyrouter.umd.js",
+      "types": "./dist/slyrouter.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core/index.js",
+      "require": "./dist/core/index.cjs.js",
+      "types": "./dist/core/index.d.ts"
+    },
+    "./plugins": {
+      "import": "./dist/plugins/index.js",
+      "require": "./dist/plugins/index.cjs.js",
+      "types": "./dist/plugins/index.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.js",
+      "require": "./dist/utils/index.cjs.js",
+      "types": "./dist/utils/index.d.ts"
+    }
+  },
+  "./core": {
+    "import": "./dist/core/index.js",
+    "require": "./dist/core/index.cjs.js"
+  },
+  "./plugins": {
+    "import": "./dist/plugins/index.js",
+    "require": "./dist/plugins/index.cjs.js"
+  },
+  "./utils": {
+    "import": "./dist/utils/index.js",
+    "require": "./dist/utils/index.cjs.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "rollup": "^3.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "vitest": "^0.34.0",
+    "jsdom": "^22.0.0"
+  },
+  "peerDependencies": {}
+}
